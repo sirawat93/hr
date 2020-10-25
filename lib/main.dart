@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hr/calendar.dart';
 
 void main() => runApp(MaterialApp(home: HrApp()));
 
@@ -12,7 +13,7 @@ class _HrAppState extends State<HrApp> {
 
   List _pages = [
     Text("Home"),
-    Text("Calendar"),
+    Calendar(),
     Text("Account"),
   ];
 
@@ -25,7 +26,7 @@ class _HrAppState extends State<HrApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("codesundar"), backgroundColor: Colors.lightBlue[900]),
+      appBar: AppBar(title: Text("HR"), backgroundColor: Colors.lightBlue[900]),
       body: Center(child: _pages[_selectedTabIndex]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTabIndex,
