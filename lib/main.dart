@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hr/calendar.dart';
 import 'package:hr/chat.dart';
 import 'package:hr/constants/theme.dart';
+import 'package:hr/profile.dart';
 
 void main() => runApp(MaterialApp(
       theme: defaultTargetPlatform == TargetPlatform.iOS ? kIOSTheme : kDefaultTheme,
@@ -21,7 +22,7 @@ class _HrAppState extends State<HrApp> {
     Text("Home"),
     Calendar(),
     Chat(),
-    Text("ff"),
+    Profile(),
   ];
 
   _changeIndex(int index) {
