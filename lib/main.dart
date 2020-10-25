@@ -1,7 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hr/calendar.dart';
+import 'package:hr/chat.dart';
+import 'package:hr/constants/theme.dart';
 
-void main() => runApp(MaterialApp(home: HrApp()));
+void main() => runApp(MaterialApp(
+      theme: defaultTargetPlatform == TargetPlatform.iOS ? kIOSTheme : kDefaultTheme,
+      home: HrApp(),
+    ));
 
 class HrApp extends StatefulWidget {
   @override
@@ -14,7 +20,8 @@ class _HrAppState extends State<HrApp> {
   List _pages = [
     Text("Home"),
     Calendar(),
-    Text("Account"),
+    Chat(),
+    Text("ff"),
   ];
 
   _changeIndex(int index) {
@@ -30,10 +37,13 @@ class _HrAppState extends State<HrApp> {
       body: Center(child: _pages[_selectedTabIndex]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTabIndex,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
         onTap: _changeIndex,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text("Calendar")),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), title: Text("Chat")),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text("My Account")),
         ],
       ),
