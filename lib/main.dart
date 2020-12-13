@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hr/calendar.dart';
+import 'package:hr/calendar_carousel.dart';
 import 'package:hr/chat.dart';
 import 'package:hr/constants/theme.dart';
 import 'package:hr/profile.dart';
@@ -21,6 +22,7 @@ class _HrAppState extends State<HrApp> {
   List _pages = [
     Text("Home"),
     Calendar(),
+    Calendar2(),
     Chat(),
     Profile(),
   ];
@@ -44,6 +46,7 @@ class _HrAppState extends State<HrApp> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text("Calendar")),
+          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text("Calendar2")),
           BottomNavigationBarItem(icon: Icon(Icons.chat), title: Text("Chat")),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text("My Account")),
         ],
